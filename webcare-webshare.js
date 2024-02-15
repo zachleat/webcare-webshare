@@ -41,7 +41,6 @@ class WebcareWebshare extends HTMLElement {
 		this.button = this.querySelector("button");
 		this.button?.removeAttribute("disabled");
 		this.button?.addEventListener("click", () => {
-			console.log( "hi" );
 			this.share();
 		});
 	}
