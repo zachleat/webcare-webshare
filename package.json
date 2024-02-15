@@ -1,0 +1,26 @@
+{
+  "name": "@zachleat/webcare-webshare",
+  "version": "1.0.0",
+  "description": "Either uses the Web Share API or copies share text to the clipboard.",
+  "main": "webcare-webshare.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "start": "npx http-server ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zachleat/webcare-webshare.git"
+  },
+  "author": {
+    "name": "Zach Leatherman",
+    "email": "zachleatherman@gmail.com",
+    "url": "https://zachleat.com/"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zachleat/webcare-webshare/issues"
+  },
+  "homepage": "https://github.com/zachleat/webcare-webshare#readme"
+}
