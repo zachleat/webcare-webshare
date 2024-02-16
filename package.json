@@ -1,6 +1,6 @@
 {
   "name": "@zachleat/webcare-webshare",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Either uses the Web Share API or copies share text to the clipboard.",
   "main": "webcare-webshare.js",
   "publishConfig": {
