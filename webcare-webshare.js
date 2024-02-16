@@ -11,6 +11,7 @@ class WebcareWebshare extends HTMLElement {
 	}
 
 	static attr = {
+		labelCopy: "label-copy",
 		labelAfterCopied: "label-after-copy",
 		text: "share-text",
 		url: "share-url",
@@ -40,9 +41,17 @@ class WebcareWebshare extends HTMLElement {
 
 		this.button = this.querySelector("button");
 		this.button?.removeAttribute("disabled");
+		let copyLabel = this.getAttribute(WebcareWebshare.attr.labelCopy);
+		if(this.button && !this.canShare() && copyLabel) {
+			this.button.innerText = copyLabel;
+		}
 		this.button?.addEventListener("click", () => {
 			this.share();
 		});
+	}
+
+	canShare() {
+		return "share" in navigator;
 	}
 
 	async copyToClipboard() {
@@ -59,7 +68,7 @@ class WebcareWebshare extends HTMLElement {
 
 	async share() {
 		// Feature detection to see if the Web Share API is supported.
-		if (!("share" in navigator)) {
+		if (!this.canShare()) {
 			await this.copyToClipboard();
 			return;
 		}

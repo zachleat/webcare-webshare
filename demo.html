@@ -10,6 +10,12 @@
 		body {
 			font-family: system-ui, sans-serif;
 		}
+
+		button {
+			border-radius: .5em;
+			padding: .25em;
+			font-size: 3em;
+		}
 		</style>
 		<script type="module" src="webcare-webshare.js"></script>
 	</head>
@@ -20,8 +26,9 @@
 		<main>
 			<p><a href="https://github.com/zachleat/webcare-webshare">Back to the Source Code</a></p>
 			<h2>Stock</h2>
-			<webcare-webshare label-after-copy="Copied to clipboard." share-text="I am going to the 11ty Conference! Do you want to go to there as well? https://conf.11ty.dev/" share-url="https://conf.11ty.dev/">
-				<button disabled>Share this ticket!</button>
+			<p>Includes custom text for the Copy to Clipboard workflow when Web Share API is not available.</p>
+			<webcare-webshare label-copy="📋 Share your ticket!" label-after-copy="✅ Copied to clipboard" share-text="I am going to the 11ty Conference! Do you want to go to there as well? https://conf.11ty.dev/" share-url="https://conf.11ty.dev/">
+				<button disabled>Share your ticket!</button>
 			</webcare-webshare>
 		</main>
 	</body>
