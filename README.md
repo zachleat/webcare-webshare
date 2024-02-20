@@ -2,9 +2,10 @@
 
 A web component that uses the [Web Share API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Share_API) to share a web site, falling back (on Desktop usually) to Copy to Clipboard.
 
-* [Demos](https://zachleat.github.io/webcare-webshare/demo.html)
+Inspired by [_How to let the user share the website they are on_—Thomas Steiner (web.dev)](https://web.dev/patterns/web-apps/share/). In use on the registration flow for [`conf.11ty.dev`](https://conf.11ty.dev/).
 
-Used on the registration flow for [`conf.11ty.dev`](https://conf.11ty.dev/).
+* [Demo](https://zachleat.github.io/webcare-webshare/demo.html)
+
 
 ## Features
 
