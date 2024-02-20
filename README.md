@@ -1,4 +1,4 @@
-# `<webshare-webcare>` Web Component
+# `<webcare-webshare>` Web Component
 
 A web component that uses the [Web Share API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Share_API) to share a web site, falling back (on Desktop usually) to Copy to Clipboard.
 
