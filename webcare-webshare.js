@@ -11,10 +11,11 @@ class WebcareWebshare extends HTMLElement {
 	}
 
 	static attr = {
-		labelCopy: "label-copy",
-		labelAfterCopied: "label-after-copy",
 		text: "share-text",
 		url: "share-url",
+		copyContent: "copy-text", // optional, defaults to url
+		labelCopy: "label-copy",
+		labelAfterCopied: "label-after-copy",
 	}
 
 	get text() {
@@ -27,7 +28,19 @@ class WebcareWebshare extends HTMLElement {
 		}
 
 		let canonical = document.querySelector('link[rel="canonical"]');
-  	return canonical?.href || location.href;
+		return canonical?.href || location.href;
+	}
+
+	get copyLabel() {
+		return this.getAttribute(WebcareWebshare.attr.labelAfterCopied) || "Copied.";
+	}
+
+	get copyContent() {
+		return this.getAttribute(WebcareWebshare.attr.copyContent) || this.url;
+	}
+
+	canShare() {
+		return "share" in navigator;
 	}
 
 	connectedCallback() {
@@ -50,19 +63,15 @@ class WebcareWebshare extends HTMLElement {
 		});
 	}
 
-	canShare() {
-		return "share" in navigator;
-	}
-
 	async copyToClipboard() {
 		if(!("clipboard" in navigator)) {
 			return;
 		}
 
-		await navigator.clipboard.writeText(this.text);
-		let newLabel = this.getAttribute(WebcareWebshare.attr.labelAfterCopied);
-		if(this.button && newLabel) {
-			this.button.textContent = newLabel;
+		await navigator.clipboard.writeText(this.copyContent);
+
+		if(this.button) {
+			this.button.textContent = this.copyLabel;
 		}
 	}
 

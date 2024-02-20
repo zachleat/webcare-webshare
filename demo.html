@@ -14,7 +14,8 @@
 		button {
 			border-radius: .5em;
 			padding: .25em;
-			font-size: 3em;
+			font-size: 1.5em;
+			line-height: 1;
 		}
 		</style>
 		<script type="module" src="webcare-webshare.js"></script>
@@ -26,8 +27,23 @@
 		<main>
 			<p><a href="https://github.com/zachleat/webcare-webshare">Back to the Source Code</a></p>
 			<h2>Stock</h2>
-			<p>Includes custom text for the Copy to Clipboard workflow when Web Share API is not available.</p>
-			<webcare-webshare label-copy="📋 Share your ticket!" label-after-copy="✅ Copied to clipboard" share-text="I am going to the 11ty Conference! #11ty #11tyConf" share-url="https://conf.11ty.dev/">
+			<p>Prefers the Web Share API, falls back to a copy to clipboard feature when unavailable.</p>
+			<webcare-webshare share-text="I am going to the 11ty Conference! #11ty #11tyConf" share-url="https://conf.11ty.dev/">
+				<button disabled>Share your ticket!</button>
+			</webcare-webshare>
+			<h2>Custom button text after copied</h2>
+			<p>Set custom text on the button when the Web Share API is not available.</p>
+			<webcare-webshare share-text="I am going to the 11ty Conference! #11ty #11tyConf" share-url="https://conf.11ty.dev/" label-after-copy="✅ Copied to clipboard">
+				<button disabled>Share your ticket!</button>
+			</webcare-webshare>
+			<h2>Custom content for Clipboard</h2>
+			<p>Override <code>share-url</code> as the default content that is copied when using Copy to Clipboard.</p>
+			<webcare-webshare share-text="I am going to the 11ty Conference! #11ty #11tyConf" share-url="https://conf.11ty.dev/" copy-text="Go to https://conf.11ty.dev/">
+				<button disabled>Share your ticket!</button>
+			</webcare-webshare>
+			<h2>Custom button text for Clipboard</h2>
+			<p>Set custom text on the button when the Web Share API is not available.</p>
+			<webcare-webshare share-text="I am going to the 11ty Conference! #11ty #11tyConf" share-url="https://conf.11ty.dev/" label-copy="📋 Copy your ticket URL" label-after-copy="✅ Copied to Clipboard">
 				<button disabled>Share your ticket!</button>
 			</webcare-webshare>
 		</main>
