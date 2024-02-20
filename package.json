@@ -1,6 +1,6 @@
 {
   "name": "@zachleat/webcare-webshare",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Web component to use the Web Share API, with a fallback to copy to the clipboard.",
   "main": "webcare-webshare.js",
   "publishConfig": {
