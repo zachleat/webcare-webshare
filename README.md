@@ -4,6 +4,8 @@ A web component that uses the [Web Share API](https://developer.mozilla.org/en-U
 
 * [Demos](https://zachleat.github.io/webcare-webshare/demo.html)
 
+Used on the registration flow for [`conf.11ty.dev`](https://conf.11ty.dev/).
+
 ## Features
 
 * Defaults to copy URL when Web Share API is not available.
