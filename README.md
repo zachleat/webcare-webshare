@@ -3,12 +3,12 @@
 A web component that uses the [Web Share API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Share_API) to share a web site, falling back (on Desktop usually) to Copy to Clipboard.
 
 * [Demos](https://zachleat.github.io/webcare-webshare/demo.html)
-* Used on the registration flow for [`conf.11ty.dev`](https://conf.11ty.dev/)
 
 ## Features
 
-* Customize minimum `delay` before the loading indicator is shown.
-* Customize loading indicator bar height.
+* Defaults to copy URL when Web Share API is not available.
+* Optionally override with your own copy-able content.
+* Custom button text when Web Share API is not available.
 
 ## Installation
 
